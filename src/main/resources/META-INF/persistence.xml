@@ -9,9 +9,9 @@
 
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:330?serverTimezone=UTC"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/plan_crazy_app?serverTimezone=UTC"/>
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.appUser" value="root"/>
             <property name="jakarta.persistence.jdbc.password" value=""/>
             <!-- Affiche les requêtes SQL dans la console         -->
             <property name="hibernate.show_sql" value="true"/>
