@@ -1,4 +1,4 @@
-package com.example.plan_crazy_app_back_office.servlet;
+package com.example.plan_crazy_app_back_office.servlet.appUserServlet;
 
 import com.example.plan_crazy_app_back_office.dao.AppUserDao;
 import com.example.plan_crazy_app_back_office.model.AppUser;

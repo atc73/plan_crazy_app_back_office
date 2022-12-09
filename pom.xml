@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>plan_crazy_app_back_office</artifactId>
+    <artifactId>management_app</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>plan_crazy_app_back_office</name>
+    <name>management_app</name>
     <packaging>war</packaging>
 
     <properties>

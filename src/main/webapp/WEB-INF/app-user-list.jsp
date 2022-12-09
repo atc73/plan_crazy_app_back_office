@@ -26,7 +26,7 @@
         <li>${appUser.city}</li>
         <li>${appUser.phoneNumber}</li>
         <li>${appUser.email}</li>
-        <li>${appUser.isAdmin}</li>
+        <li>${appUser.isAdmin ? 'admin' : 'utilisateur'}</li>
         <li style="list-style: none;">
             <form method="post" action="${pageContext.request.contextPath}/app-users/delete">
                 <input type="hidden" value="${appUser.appUserId}" name="appUserId">

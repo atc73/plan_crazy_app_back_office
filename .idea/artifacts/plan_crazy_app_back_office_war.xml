@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="plan_crazy_app_back_office-1.0-SNAPSHOT.war">
+    <root id="archive" name="management_app-1.0-SNAPSHOT.war">
       <element id="artifact" artifact-name="plan_crazy_app_back_office:war exploded" />
     </root>
   </artifact>

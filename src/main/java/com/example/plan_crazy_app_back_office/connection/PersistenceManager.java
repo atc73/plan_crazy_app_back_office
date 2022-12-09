@@ -1,4 +1,4 @@
-package com.example.plan_crazy_app_back_office.connection;
+package com.example.management_app.connection;
 
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;

@@ -51,6 +51,19 @@ public class AppUser {
 
     }
 
+    public AppUser(String nickname, String firstName, String lastName, String address, Integer postcode, String city, String phoneNumber, String email, String password, Boolean isAdmin) {
+        this.nickname = nickname;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.postcode = postcode;
+        this.city = city;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.password = password;
+        this.isAdmin = isAdmin;
+    }
+
     public Long getAppUserId() {
         return appUserId;
     }
@@ -131,11 +144,11 @@ public class AppUser {
         this.email = email;
     }
 
-    public Boolean getAdmin() {
+    public Boolean getIsAdmin() {
         return isAdmin;
     }
 
-    public void setAdmin(Boolean admin) {
+    public void setIsAdmin(Boolean admin) {
         isAdmin = admin;
     }
 
@@ -153,5 +166,21 @@ public class AppUser {
 
     public void setUserTaskAssociationList(List<UserTaskAssociation> userTaskAssociationList) {
         UserTaskAssociationList = userTaskAssociationList;
+    }
+
+    @Override
+    public String toString() {
+        return "AppUser{" +
+                "nickname='" + nickname + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", address='" + address + '\'' +
+                ", postcode=" + postcode +
+                ", city='" + city + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", isAdmin=" + isAdmin +
+                '}';
     }
 }

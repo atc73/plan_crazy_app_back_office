@@ -1,6 +1,6 @@
 package com.example.plan_crazy_app_back_office.dao;
 
-import com.example.plan_crazy_app_back_office.connection.PersistenceManager;
+import com.example.management_app.connection.PersistenceManager;
 import com.example.plan_crazy_app_back_office.model.AppUser;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -101,7 +101,7 @@ public class AppUserDao implements Dao<AppUser>{
                 appUser.setPhoneNumber(appUserUpdate.getPhoneNumber());
                 appUser.setEmail(appUserUpdate.getEmail());
                 appUser.setPassword(appUserUpdate.getPassword());
-                appUser.setAdmin(appUserUpdate.getAdmin());
+                appUser.setIsAdmin(appUserUpdate.getIsAdmin());
             }
             et.commit();
         } catch (Exception e) {
