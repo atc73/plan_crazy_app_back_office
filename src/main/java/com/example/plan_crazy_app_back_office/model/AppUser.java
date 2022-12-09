@@ -23,15 +23,9 @@ public class AppUser {
     @Column(name="last_name")
     private String lastName;
 
-    @Column(name = "is_admin", nullable = false)
-    private Boolean isAdmin;
-
-
     private String address;
 
-
     private Integer postcode;
-
 
     private String city;
 
@@ -40,6 +34,12 @@ public class AppUser {
 
     @Column(nullable = false, unique = true)
     private String email;
+
+    @Column(nullable = false)
+    private String password;
+
+    @Column(name = "is_admin", nullable = false)
+    private Boolean isAdmin;
 
     @OneToMany
     private List<Picture> pictureList = new ArrayList<>();
@@ -117,6 +117,14 @@ public class AppUser {
 
     public String getEmail() {
         return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public void setEmail(String email) {

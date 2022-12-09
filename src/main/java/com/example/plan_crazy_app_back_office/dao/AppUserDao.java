@@ -12,12 +12,12 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
-public class UserDao implements Dao<AppUser>{
+public class AppUserDao implements Dao<AppUser>{
 
     EntityManagerFactory emf = PersistenceManager.getEntityManager();
 
     @Override
-    public List<AppUser> getAll() {
+    public List<AppUser> findAll() {
         List<AppUser> appUserList = new ArrayList<>();
         EntityManager em = emf.createEntityManager();
         EntityTransaction et = em.getTransaction();
@@ -40,7 +40,7 @@ public class UserDao implements Dao<AppUser>{
 
 
     @Override
-    public void save(AppUser appUser) {
+    public void create(AppUser appUser) {
         EntityManager em = emf.createEntityManager();
         EntityTransaction et = em.getTransaction();
         try {
@@ -58,15 +58,15 @@ public class UserDao implements Dao<AppUser>{
     }
 
     @Override
-    public Optional<AppUser> findById(Long id) {
+    public Optional<AppUser> findById(Long appUserId) {
         EntityManager em = emf.createEntityManager();
         EntityTransaction et = em.getTransaction();
         System.out.println("Je suis dans le findById");
-        System.out.println(id);
+        System.out.println(appUserId);
         try {
             et.begin();
             AppUser appUser = em.createQuery("SELECT b FROM AppUser b  WHERE b.id = :idParam", AppUser.class)
-                    .setParameter("idParam", id)
+                    .setParameter("idParam", appUserId)
                     .getSingleResult();
             et.commit();
             return Optional.of(appUser);
@@ -85,18 +85,23 @@ public class UserDao implements Dao<AppUser>{
     public void update(AppUser appUserUpdate) {
         EntityManager em = emf.createEntityManager();
         EntityTransaction et = em.getTransaction();
-        Long id = appUserUpdate.getUserId();
+        Long id = appUserUpdate.getAppUserId();
 
         try {
             et.begin();
             AppUser appUser = em.find(AppUser.class, id);
 
-            if (Objects.equals(appUser.getUserId(), appUserUpdate.getUserId())) {
+            if (Objects.equals(appUser.getAppUserId(), appUserUpdate.getAppUserId())) {
+                appUser.setNickname(appUserUpdate.getNickname());
+                appUser.setFirstName(appUserUpdate.getFirstName());
+                appUser.setLastName(appUserUpdate.getLastName());
                 appUser.setAddress(appUserUpdate.getAddress());
                 appUser.setPostcode(appUserUpdate.getPostcode());
                 appUser.setCity(appUserUpdate.getCity());
                 appUser.setPhoneNumber(appUserUpdate.getPhoneNumber());
                 appUser.setEmail(appUserUpdate.getEmail());
+                appUser.setPassword(appUserUpdate.getPassword());
+                appUser.setAdmin(appUserUpdate.getAdmin());
             }
             et.commit();
         } catch (Exception e) {
@@ -111,13 +116,13 @@ public class UserDao implements Dao<AppUser>{
 
 
     @Override
-    public void delete(AppUser appUserToDelete) {
+    public void delete(Long appUserId) {
         EntityManager em = emf.createEntityManager();
         EntityTransaction et = em.getTransaction();
         try {
             et.begin();
-            AppUser appUser = em.find(AppUser.class, appUserToDelete.getAppUserId());
-            em.remove(appUser);
+            Optional<AppUser> appUser = Optional.of(em.find(AppUser.class, appUserId));
+            appUser.ifPresent(em::remove);
             et.commit();
         } catch (Exception e) {
             e.printStackTrace();
