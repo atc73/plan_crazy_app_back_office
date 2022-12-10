@@ -61,8 +61,6 @@ public class AppUserDao implements Dao<AppUser>{
     public Optional<AppUser> findById(Long appUserId) {
         EntityManager em = emf.createEntityManager();
         EntityTransaction et = em.getTransaction();
-        System.out.println("Je suis dans le findById");
-        System.out.println(appUserId);
         try {
             et.begin();
             AppUser appUser = em.createQuery("SELECT b FROM AppUser b  WHERE b.id = :idParam", AppUser.class)

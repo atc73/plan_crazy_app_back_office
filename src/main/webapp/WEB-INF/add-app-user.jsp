@@ -5,34 +5,37 @@
 </head>
 <body>
 
-<h1>Add app user</h1>
-<form method="post" action="/app-users/add">
-  <label for="nickname">Nickname :</label>
-  <input id="nickname" type="text" name="nickname">
+<jsp:include page="header.jsp"></jsp:include>
 
-  <label for="firstName">First name :</label>
-  <input id="firstName" type="text" name="firstName">
+<h1 id="add_user_title">Ajouter un utilisateur</h1>
 
-  <label for="lastName">Last name :</label>
-  <input id="lastName" type="text" name="lastName">
+<form id="add_user_form" method="post" action="/app-users/add">
+  <label for="nickname">Pseudo</label>
+  <input id="nickname" type="text" name="nickname" placeholder="Pseudo" required>
 
-  <label for="address">Address :</label>
-  <input id="address" type="text" name="address">
+  <label for="firstName">Prénom</label>
+  <input id="firstName" type="text" name="firstName" placeholder="Prénom" required>
 
-  <label for="postcode">Postcode :</label>
-  <input id="postcode" type="number" name="postcode">
+  <label for="lastName">Nom de famille</label>
+  <input id="lastName" type="text" name="lastName" placeholder="Nom de famille" required>
 
-  <label for="city">City :</label>
-  <input id="city" type="text" name="city">
+  <label for="address">Adresse</label>
+  <input id="address" type="text" name="address" placeholder="Adresse" required>
 
-  <label for="phoneNumber">Phone number :</label>
-  <input id="phoneNumber" type="text" name="phoneNumber">
+  <label for="postcode">Code postal</label>
+  <input id="postcode" type="number" name="postcode" placeholder="Code postal" required>
 
-  <label for="email">Email :</label>
-  <input id="email" type="text" name="email">
+  <label for="city">Ville</label>
+  <input id="city" type="text" name="city" placeholder="ville" required>
 
-  <label for="password">Password :</label>
-  <input id="password" type="text" name="password">
+  <label for="phoneNumber">Téléphone</label>
+  <input id="phoneNumber" type="text" name="phoneNumber" placeholder="Téléphone" required>
+
+  <label for="email">Email</label>
+  <input id="email" type="email" name="email" placeholder="Email" required>
+
+  <label for="password">Mot de passe</label>
+  <input id="password" type="text" name="password" placeholder="Mot de passe" required>
 
   <fieldset>
     <div>
@@ -45,7 +48,7 @@
     </div>
   </fieldset>
 
-  <button>Ajouter un utilisateur / admin</button>
+  <button id="add_user_form_button">Ajouter un utilisateur / admin</button>
 </form>
 
 </body>

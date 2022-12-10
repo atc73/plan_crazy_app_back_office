@@ -3,40 +3,41 @@
 
 <html>
 <head>
-    <title>Customers</title>
+    <link href="../style.css" rel="stylesheet">
+    <title>Users list</title>
 </head>
 <body>
 
 <jsp:include page="header.jsp"></jsp:include>
 
-<h1>App users</h1>
+<h1 id="user_list_title">Liste des utilisateurs</h1>
 
-<div>
+<div id="add_user">
     <a class="btn btn-success"
        href="${pageContext.request.contextPath}/app-users/add">Ajouter un utilisateur</a>
 </div>
 
 <c:forEach items="${appUserList}" var="appUser">
-    <ul>
-        <li>${appUser.nickname}</li>
-        <li>${appUser.firstName}</li>
-        <li>${appUser.lastName}</li>
-        <li>${appUser.address}</li>
-        <li>${appUser.postcode}</li>
-        <li>${appUser.city}</li>
-        <li>${appUser.phoneNumber}</li>
-        <li>${appUser.email}</li>
-        <li>${appUser.isAdmin ? 'admin' : 'utilisateur'}</li>
-        <li style="list-style: none;">
-            <form method="post" action="${pageContext.request.contextPath}/app-users/delete">
-                <input type="hidden" value="${appUser.appUserId}" name="appUserId">
-                <button>Delete</button>
-            </form>
-        </li>
-        <li style="list-style: none;">
-            <a class="btn btn-primary" href="${pageContext.request.contextPath}/app-users/update?id=${appUser.appUserId}">Update</a>
-        </li>
-    </ul>
+    <div class="user_card">
+        <div class="user_details">
+            <ul>
+                <li>Pseudo : ${appUser.nickname}</li>
+                <li>Prénom : ${appUser.firstName}</li>
+                <li>Nom de famille : ${appUser.lastName}</li>
+            </ul>
+            <ul>
+                <li>Adresse : ${appUser.address}</li>
+                <li>Code postal : ${appUser.postcode}</li>
+                <li>Ville : ${appUser.city}</li>
+                <li>Tel. : ${appUser.phoneNumber}</li>
+                <li>Email : ${appUser.email}</li>
+                <li>User_Id : ${appUser.appUserId}</li>
+            </ul>
+        </div>
+        <div id="update_user">
+            <a href="${pageContext.request.contextPath}/app-users/update?id=${appUser.appUserId}">Modifier</a>
+        </div>
+    </div>
 </c:forEach>
 
 </body>

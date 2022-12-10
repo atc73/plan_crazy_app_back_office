@@ -64,6 +64,20 @@ public class AppUser {
         this.isAdmin = isAdmin;
     }
 
+    public AppUser(Long appUserId, String nickname, String firstName, String lastName, String address, Integer postcode, String city, String phoneNumber, String email, String password, Boolean isAdmin) {
+        this.appUserId = appUserId;
+        this.nickname = nickname;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.postcode = postcode;
+        this.city = city;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.password = password;
+        this.isAdmin = isAdmin;
+    }
+
     public Long getAppUserId() {
         return appUserId;
     }
