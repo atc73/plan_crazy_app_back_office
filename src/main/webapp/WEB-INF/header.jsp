@@ -1,10 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link href="../style.css" rel="stylesheet">
     <title>Title</title>
+    <style><%@include file="/WEB-INF/style.css"%></style>
 </head>
 <body>
-<h1 id="plan_crazy_app_title">PlanCrazyApp</h1>
+<a id="plan_crazy_app_title" href="${pageContext.request.contextPath}/welcome">PlanCrazyApp</a>
 </body>
 </html>

@@ -1,4 +1,4 @@
-package com.example.plan_crazy_app_back_office.servlet.appUserServlet;
+package com.example.plan_crazy_app_back_office.servlet.adminServlet;
 
 import com.example.plan_crazy_app_back_office.dao.AppUserDao;
 import com.example.plan_crazy_app_back_office.model.AppUser;
@@ -12,15 +12,15 @@ import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@WebServlet(urlPatterns = "/app-users")
-public class AppUserListServlet extends HttpServlet {
+@WebServlet(urlPatterns = "/admins")
+public class AdminListServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         AppUserDao appUserDao = new AppUserDao();
-        List<AppUser> appUserList = appUserDao.findAll().stream().filter(t -> !t.getIsAdmin()).collect(Collectors.toList());
+        List<AppUser> adminList = appUserDao.findAll().stream().filter(t -> t.getIsAdmin()).collect(Collectors.toList());
 
-        req.setAttribute("appUserList", appUserList);
-        req.getRequestDispatcher("/WEB-INF/app-user-list.jsp").forward(req, resp);
+        req.setAttribute("adminList", adminList);
+        req.getRequestDispatcher("/WEB-INF/admin-list.jsp").forward(req, resp);
     }
 }

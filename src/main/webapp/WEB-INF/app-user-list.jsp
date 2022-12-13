@@ -3,8 +3,8 @@
 
 <html>
 <head>
-    <link href="../style.css" rel="stylesheet">
     <title>Users list</title>
+    <style><%@include file="/WEB-INF/style.css"%></style>
 </head>
 <body>
 
@@ -34,9 +34,10 @@
                 <li>User_Id : ${appUser.appUserId}</li>
             </ul>
         </div>
-        <div id="update_user">
-            <a href="${pageContext.request.contextPath}/app-users/update?id=${appUser.appUserId}">Modifier</a>
-        </div>
+        <form id="update_user_form" method="get" action="${pageContext.request.contextPath}/app-users/update">
+            <input type="hidden" value="${appUser.appUserId}" name="appUserId">
+            <button class="update_user_btn">Modifier</button>
+        </form>
     </div>
 </c:forEach>
 

@@ -1,13 +1,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <title>Add app user</title>
+  <title>Add form</title>
+  <style><%@include file="/WEB-INF/style.css"%></style>
 </head>
 <body>
 
 <jsp:include page="header.jsp"></jsp:include>
 
-<h1 id="add_user_title">Ajouter un utilisateur</h1>
+<h1 id="add_user_title">Ajouter un utilisateur / admin</h1>
 
 <form id="add_user_form" method="post" action="/app-users/add">
   <label for="nickname">Pseudo</label>

@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Update app user</title>
+  <style><%@include file="/WEB-INF/style.css"%></style>
 </head>
 <body>
 
@@ -52,6 +53,11 @@
   </fieldset>
 
   <button id="add_user_form_button">Modifier</button>
+</form>
+
+<form id="delete_user_form" method="post" action="${pageContext.request.contextPath}/app-users/delete">
+  <input type="hidden" value="${appUser.appUserId}" name="appUserId">
+  <button id="delete_user_btn">Supprimer l'utilisateur</button>
 </form>
 
 </body>

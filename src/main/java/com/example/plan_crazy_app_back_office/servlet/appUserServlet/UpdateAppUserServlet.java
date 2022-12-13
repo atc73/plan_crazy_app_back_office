@@ -16,7 +16,7 @@ public class UpdateAppUserServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String appUserId = req.getParameter("id");
+        String appUserId = req.getParameter("appUserId");
 
         try {
             Long id = Long.parseLong(appUserId);
