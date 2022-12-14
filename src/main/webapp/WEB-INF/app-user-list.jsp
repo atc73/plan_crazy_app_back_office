@@ -31,6 +31,9 @@
                 <li>Tel. : ${appUser.phoneNumber}</li>
                 <li>Email : ${appUser.email}</li>
                 <li>User_Id : ${appUser.appUserId}</li>
+                <li>${appUser.isActive ? "Compte actif" : "Compte désactivé"}</li>
+                <li>${appUser.isAdmin ? "ADMIN" : ""}</li>
+                <li>${appUser.isSuperAdmin ? "SUPER ADMIN" : ""}</li>
             </ul>
         </div>
         <form id="update_user_form" method="get" action="${pageContext.request.contextPath}/app-users/update">

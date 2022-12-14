@@ -29,6 +29,7 @@ public class AddAppUserServlet extends HttpServlet {
         String phoneNumber = req.getParameter("phoneNumber");
         String email = req.getParameter("email");
         String password = req.getParameter("password");
+        Boolean isActive = Boolean.valueOf(req.getParameter("isActive"));
         Boolean isAdmin = Boolean.parseBoolean(req.getParameter("isAdmin"));
 
         AppUser appUser = new AppUser(nickname, firstName, lastName, address, postcode, city, phoneNumber, email, password, isAdmin);
@@ -37,6 +38,6 @@ public class AddAppUserServlet extends HttpServlet {
 
         customerDao.create(appUser);
 
-        resp.sendRedirect(req.getContextPath() + "/app-users");
+        resp.sendRedirect(req.getContextPath() + (isAdmin ? "/admins" : "/app-users"));
     }
 }

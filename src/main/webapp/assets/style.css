@@ -84,10 +84,6 @@
     padding: calc(1rem + 1vw);
 }
 
-.admin_card {
-    background: #EFB6E9;
-}
-
 .user_details {
     list-style: none;
     display: flex;
@@ -111,8 +107,18 @@
     cursor: pointer;
 }
 
+/**** ADMIN LIST ******************************************************  */
+
 .admin-btn {
     background: #F55EE6;
+}
+
+.admin_card {
+    background: #EFB6E9;
+}
+
+#admin {
+    color: red;
 }
 
 

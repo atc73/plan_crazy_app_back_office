@@ -38,8 +38,14 @@ public class AppUser {
     @Column(nullable = false)
     private String password;
 
+    @Column(name = "is_active", nullable = false)
+    private Boolean isActive = true;
+
     @Column(name = "is_admin", nullable = false)
-    private Boolean isAdmin;
+    private Boolean isAdmin = false;
+
+    @Column(name = "is_super_admin", nullable = false)
+    private Boolean isSuperAdmin = false;
 
     @OneToMany
     private List<Picture> pictureList = new ArrayList<>();
@@ -64,7 +70,7 @@ public class AppUser {
         this.isAdmin = isAdmin;
     }
 
-    public AppUser(Long appUserId, String nickname, String firstName, String lastName, String address, Integer postcode, String city, String phoneNumber, String email, String password, Boolean isAdmin) {
+    public AppUser(Long appUserId, String nickname, String firstName, String lastName, String address, Integer postcode, String city, String phoneNumber, String email, String password, Boolean isActive, Boolean isAdmin) {
         this.appUserId = appUserId;
         this.nickname = nickname;
         this.firstName = firstName;
@@ -75,6 +81,7 @@ public class AppUser {
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.password = password;
+        this.isActive = isActive;
         this.isAdmin = isAdmin;
     }
 
@@ -158,12 +165,28 @@ public class AppUser {
         this.email = email;
     }
 
+    public Boolean getIsActive() {
+        return isActive;
+    }
+
+    public void setIsActive(Boolean active) {
+        isActive = active;
+    }
+
     public Boolean getIsAdmin() {
         return isAdmin;
     }
 
     public void setIsAdmin(Boolean admin) {
         isAdmin = admin;
+    }
+
+    public Boolean getIsSuperAdmin() {
+        return isSuperAdmin;
+    }
+
+    public void setIsSuperAdmin(Boolean superAdmin) {
+        isSuperAdmin = superAdmin;
     }
 
     public List<Picture> getPictureList() {

@@ -51,6 +51,16 @@
       <label for="user">Utilisateur</label>
     </div>
   </fieldset>
+  <fieldset>
+    <div>
+      <input type="radio" id="active" name="isActive" value="true" ${appUser.isActive ? "checked" : null}>
+      <label for="active">${appUser.isActive ? "Compte actif" : "Activer le compte"}</label>
+    </div>
+    <div>
+      <input type="radio" id="inactive" name="isActive" value="false" ${!appUser.isActive ? "checked" : null}>
+      <label for="inactive">${appUser.isActive ? "Désactiver le compte" : "Compte indactif"}</label>
+    </div>
+  </fieldset>
 
   <button id="add_user_form_button">Modifier</button>
 </form>
