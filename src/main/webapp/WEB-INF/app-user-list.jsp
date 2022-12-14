@@ -4,7 +4,6 @@
 <html>
 <head>
     <title>Users list</title>
-    <style><%@include file="/WEB-INF/style.css"%></style>
 </head>
 <body>
 

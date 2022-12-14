@@ -4,7 +4,6 @@
 <html>
 <head>
     <title>Admins list</title>
-    <style><%@include file="/WEB-INF/style.css"%></style>
 </head>
 <body>
 

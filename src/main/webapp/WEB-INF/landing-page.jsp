@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>Plan Crazy App</title>
-    <style><%@include file="/WEB-INF/style.css"%></style>
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>

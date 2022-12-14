@@ -1,8 +1,8 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
   <title>Update app user</title>
-  <style><%@include file="/WEB-INF/style.css"%></style>
 </head>
 <body>
 
