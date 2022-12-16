@@ -22,6 +22,39 @@
     color: red;
 }
 
+#logout_form input {
+    display: block;
+    margin: 0 auto;
+    padding: calc(0.5rem + 0.5vw);
+    border-radius: 1rem;
+    border: 1px solid rgba(1, 1, 1, 0.3);
+    box-shadow: 3px 3px 3px rgba(1, 1, 1, 0.5);
+    cursor: pointer;
+}
+
+/**** LOGIN PAGE *****************************************************  */
+
+#login_title {
+    text-align: center;
+    margin: calc(3rem + 3vw);
+}
+
+#login_form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 600px;
+    margin: calc(1rem + 1vw) auto;
+}
+
+#login_form input {
+    margin: calc(0.5rem + 0.5vw) 0 calc(1rem + 0.5vw) 0;
+    padding: calc(0.8rem);
+    border-radius: 1rem;
+    border: 1px solid rgba(1, 1, 1, 0.3);
+    box-shadow: 3px 3px 3px rgba(1, 1, 1, 0.3);
+}
+
 /**** LANDING PAGE *****************************************************  */
 #landing_page_title {
     text-align: center;
@@ -54,6 +87,7 @@
 #user_list_title {
     text-align: center;
     font-size: calc(2rem + 1vw);
+    margin: calc(1rem + 1vw) 0;
 }
 
 #add_user {

@@ -7,5 +7,14 @@
 </head>
 <body>
 <a id="plan_crazy_app_title" href="${pageContext.request.contextPath}/welcome">PlanCrazyApp</a>
+
+<c:choose>
+    <c:when test="${not empty sessionScope.email}">
+        <form id="logout_form" method="post" action="${pageContext.request.contextPath}/logout">
+            <input type="submit" value="Logout">
+        </form>
+    </c:when>
+
+</c:choose>
 </body>
 </html>

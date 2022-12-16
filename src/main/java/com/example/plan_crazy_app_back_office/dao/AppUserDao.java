@@ -78,6 +78,27 @@ public class AppUserDao implements Dao<AppUser>{
         return Optional.empty();
     }
 
+    @Override
+    public Optional<AppUser> findByEmail(String email) {
+        EntityManager em = emf.createEntityManager();
+        EntityTransaction et = em.getTransaction();
+        try {
+            et.begin();
+            AppUser appUser = em.createQuery("SELECT b FROM AppUser b  WHERE b.email = :idParam", AppUser.class)
+                    .setParameter("idParam", email)
+                    .getSingleResult();
+            et.commit();
+            return Optional.of(appUser);
+        } catch (Exception e) {
+            if (et.isActive()) {
+                et.rollback();
+            }
+        } finally {
+            em.close();
+        }
+        return Optional.empty();
+    }
+
 
     @Override
     public void update(AppUser appUserUpdate) {
